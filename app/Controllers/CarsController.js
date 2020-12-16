@@ -35,7 +35,7 @@ export default class CarsController {
     // @ts-ignore
     form.reset()
     // @ts-ignore
-    document.getElementById("new-car-modal").modal('hide');
+    $("#new-car-modal").modal('hide');
   }
 
 
