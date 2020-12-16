@@ -25,7 +25,7 @@ export default class HousesController {
       city: form['city'].value,
       state: form['state'].value,
       price: form['price'].value,
-      descrption: form['description'].value,
+      description: form['description'].value,
       imgUrl: form['imgUrl'].value
     }
     housesService.createHouse(newHouse)
