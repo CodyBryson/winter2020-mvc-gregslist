@@ -71,8 +71,8 @@
                             <div class="modal-body">
                                 <form onsubmit="app.jobsController.createJob()">
                                     <input type="text" id="title" placeholder="Job Title" required>
-                                    <input type="text" id="Company" placeholder="Codeworks" required>
-                                    <input type="number" id="Salary" placeholder="Salary" value="40000">
+                                    <input type="text" id="company" placeholder="Codeworks" required>
+                                    <input type="number" id="salary" placeholder="Salary" value="40000">
                                     <input type="text" id="description" placeholder="description">
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -99,12 +99,83 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form onsubmit="app.carsController.createHouse()">
-                                    <input type="text" id="make" placeholder="make" required>
-                                    <input type="text" id="model" placeholder="model" required>
-                                    <input type="number" id="year" placeholder="year" required min="1885" value="2020">
-                                    <input type="number" id="price" placeholder="price" required min="1">
-                                    <input type="text" id="description" placeholder="description">
+                                <form onsubmit="app.housesController.createHouse()">
+                                    <div class="form-group">
+                                        <label for="type">Type of Home</label>
+                                        <select class="form-control" id="type">
+                                            <option>House</option>
+                                            <option>Apartment</option>
+                                            <option>Condo</option>
+                                            <option>Mobile/Manufactured</option>
+                                            <option>Townhome</option>
+                                        </select>
+                                    </div>
+
+                                    <input type="number" id="squareft" placeholder="Square Ft" required>
+                                    <input type="text" id="city" placeholder="City" required>
+                                    <div class="form-group">
+                                        <label for="type">State</label>
+                                        <select class="form-control" id="state">
+                                            <option>AL</option>
+                                            <option>AK</option>
+                                            <option>AZ</option>
+                                            <option>AR</option>
+                                            <option>CA</option>
+                                            <option>CO</option>
+                                            <option>CT</option>
+                                            <option>DE</option>
+                                            <option>FL</option>
+                                            <option>GA</option>
+                                            <option>HI</option>
+                                            <option>ID</option>
+                                            <option>IL</option>
+                                            <option>IN</option>
+                                            <option>IA</option>
+                                            <option>KS</option>
+                                            <option>KY</option>
+                                            <option>LA</option>
+                                            <option>ME</option>
+                                            <option>MD</option>
+                                            <option>MA</option>
+                                            <option>MI</option>
+                                            <option>MN</option>
+                                            <option>MS</option>
+                                            <option>MO</option>
+                                            <option>MT</option>
+                                            <option>NE</option>
+                                            <option>NV</option>
+                                            <option>NH</option>
+                                            <option>NJ</option>
+                                            <option>NM</option>
+                                            <option>NY</option>
+                                            <option>NC</option>
+                                            <option>ND</option>
+                                            <option>OH</option>
+                                            <option>OK</option>
+                                            <option>OR</option>
+                                            <option>PA</option>
+                                            <option>RI</option>
+                                            <option>SC</option>
+                                            <option>SD</option>
+                                            <option>TN</option>
+                                            <option>TX</option>
+                                            <option>UT</option>
+                                            <option>VT</option>
+                                            <option>VA</option>
+                                            <option>WA</option>
+                                            <option>WV</option>
+                                            <option>WI</option>
+                                            <option>WY</option>
+                                            <option>DC</option>
+                                            <option>GU</option>
+                                            <option>MH</option>
+                                            <option>MP</option>
+                                            <option>PR</option>
+                                            <option>VI</option>
+                                        </select>
+                                    </div>
+                                    <input type="number" id="price" placeholder="Price" required>
+                                    <input type="text" id="description" placeholder="Description">
                                     <input type="text" id="imgUrl" placeholder="Image Url">
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -121,6 +192,8 @@
         <div class="row" id="cars">
         </div>
         <div class="row" id="jobs">
+        </div>
+        <div class="row" id="houses">
         </div>
     </main>
     <footer class="container-fluid bg-dark text-light">
