@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js"
+import { carsService } from "../Services/CarsService.js"
 import { housesService } from "../Services/HousesService.js"
 
 function _drawHouses() {
@@ -14,21 +15,34 @@ export default class HousesController {
   constructor() {
     ProxyState.on("houses", _drawHouses)
     _drawHouses()
+    this.getHouses()
+  }
+
+  getHouses() {
+    try {
+      housesService.getHouses()
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   createHouse() {
     window.event.preventDefault()
     let form = window.event.target
     let newHouse = {
-      type: form['type'].value,
-      squareft: form['squareft'].value,
-      city: form['city'].value,
-      state: form['state'].value,
+      bedrooms: form['bedrooms'].value,
+      bathrooms: form['bathrooms'].value,
+      levels: form['levels'].value,
+      imgUrl: form['imgUrl'].value,
+      year: form['year'].value,
       price: form['price'].value,
-      description: form['description'].value,
-      imgUrl: form['imgUrl'].value
+      description: form['description'].value
     }
-    housesService.createHouse(newHouse)
+    try {
+      housesService.createHouse(newHouse)
+    } catch (error) {
+      console.error(error)
+    }
     // @ts-ignore
     form.reset()
     // @ts-ignore
@@ -37,6 +51,17 @@ export default class HousesController {
 
 
   deleteHouse(id) {
-    housesService.deleteHouse(id)
+    try {
+      housesService.deleteHouse(id)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  bid(id, price) {
+    try {
+      carsService.bid(id, price)
+    } catch (error) {
+      console.error(error)
+    }
   }
 }

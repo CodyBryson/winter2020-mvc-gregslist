@@ -1,15 +1,15 @@
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class House {
-  constructor({ type, squareft, city, state, price, description, imgUrl }) {
-    this.id = generateId()
-    this.type = type
-    this.squareft = squareft
-    this.city = city
-    this.state = state
+  constructor({ bedrooms, bathrooms, levels, imgUrl, year, price, description, id }) {
+    this.id = id
+    this.bedrooms = bedrooms
+    this.bathrooms = bathrooms
+    this.levels = levels
+    this.imgUrl = imgUrl
+    this.year = year
     this.price = price
     this.description = description
-    this.imgUrl = imgUrl
   }
 
   get Template() {
@@ -18,11 +18,12 @@ export default class House {
     <div class="card">
         <img class="card-img-top" src="${this.imgUrl}" alt="">
         <div class="card-body">
-            <h4 class="card-title">${this.squareft} sq ft.<span> </span>${this.type}</h4>
-            <h5> Located in ${this.city}, ${this.state}</h5>
+            <h4 class="card-title">${this.levels}floor<span> </span>${this.bedrooms}bedroom(s)<span></span>${this.bathrooms}bathroom(s)</h4>
+            <h5> Built in ${this.year}</h5>
             <p class="card-text">${this.description}</p>
             <p class="card-text">$${this.price}</p>
             <div class="text-right">
+            <button type="button" class="btn btn-success" onclick="app.carsController.bid('${this.id}'), ('${this.price += 5000}')">Bid</button>
                 <button type="button" class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
             </div>
         </div>

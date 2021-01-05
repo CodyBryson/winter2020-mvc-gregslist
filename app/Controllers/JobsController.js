@@ -14,18 +14,31 @@ export default class JobsController {
   constructor() {
     ProxyState.on("jobs", _drawJobs)
     _drawJobs()
+    this.getJobs()
   }
 
+  getJobs() {
+    try {
+      jobsService.getJobs()
+    } catch (error) {
+      console.error(error)
+    }
+  }
   createJob() {
     window.event.preventDefault()
     let form = window.event.target
     let newJob = {
-      title: form['title'].value,
       company: form['company'].value,
-      salary: form['salary'].value,
+      jobTitle: form['jobTitle'].value,
+      hours: form['hours'].value,
+      rate: form['rate'].value,
       description: form['description'].value
     }
-    jobsService.createJob(newJob)
+    try {
+      jobsService.createJob(newJob)
+    } catch (error) {
+      console.error(error)
+    }
     // @ts-ignore
     form.reset()
     // @ts-ignore
@@ -34,6 +47,10 @@ export default class JobsController {
 
 
   deleteJob(id) {
-    jobsService.deleteJob(id)
+    try {
+      jobsService.deleteJob(id)
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
