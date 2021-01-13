@@ -64,6 +64,37 @@ body {
   background-color: #f2f2f2;
 }
 
+.tab{
+  overflow:hidden;
+  border: 1px solid #ccc;
+  background-color: rgba(70,148,8,.9);
+}
+.tab button{
+  background-color: inherit;
+  float: left;
+  border: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s
+}
+.tab button:hover{
+  background-color: rgba(70,148,8,.9);
+}
+.tab button.active{
+  background-color:rgba(70,148,8,.9);
+}
+.tabcontent{
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1.5s;
+}
+@keyframes fadeEffect{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -192,6 +223,8 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  max-width: 15em;
+  max-height: 15em;
 }
 
 svg {
@@ -390,6 +423,7 @@ h6, .h6 {
   font-size: 6rem;
   font-weight: 300;
   line-height: 1.2;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .display-2 {
@@ -402,6 +436,7 @@ h6, .h6 {
   font-size: 4.5rem;
   font-weight: 300;
   line-height: 1.2;
+  text-shadow: -1px 0 rgba(134, 82, 134, 0.849), 0 1px rgba(134, 82, 134, 0.849), 1px 0 rgba(134, 82, 134, 0.849), 0 -1px rgba(134, 82, 134, 0.849);
 }
 
 .display-4 {
@@ -4287,6 +4322,10 @@ input[type=button].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  box-shadow: 5px 10px 5px rgba(134, 82, 134, 0.849);
+  max-width: 30em;
+  max-height: 30em;
+
 }
 .card > hr {
   margin-right: 0;
@@ -4381,8 +4420,13 @@ input[type=button].btn-block {
 .card-img,
 .card-img-top,
 .card-img-bottom {
+  max-width: 100%;
+  height: auto;
   flex-shrink: 0;
   width: 100%;
+}
+.fancyfont{
+  font-family: 'Dancing Script', cursive;
 }
 
 .card-img,

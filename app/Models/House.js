@@ -23,8 +23,8 @@ export default class House {
             <p class="card-text">${this.description}</p>
             <p class="card-text">$${this.price}</p>
             <div class="text-right">
-            <button type="button" class="btn btn-success" onclick="app.carsController.bid('${this.id}'), ('${this.price += 5000}')">Bid</button>
-                <button type="button" class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
+            <button type="button" class="btn btn-success" onclick="app.housesController.bid('${this.id}'), ('${this.price += 5000}')">Bid</button>
+                <button type="button" class="btn btn-danger" onclick="app.housesController.deleteHouse('${this.id}')">Delete</button>
             </div>
         </div>
     </div>

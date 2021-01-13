@@ -1,6 +1,8 @@
 import { ProxyState } from "../AppState.js"
 import { carsService } from "../Services/CarsService.js"
 
+
+
 function _drawCars() {
   let cars = ProxyState.cars
   let template = ''
@@ -64,5 +66,20 @@ export default class CarsController {
     } catch (error) {
       console.error(error)
     }
+  }
+  openShop(evt, offerName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace("active", "");
+    }
+    document.getElementById(offerName).style.display = "block";
+    evt.currentTarget.className += " active";
   }
 }

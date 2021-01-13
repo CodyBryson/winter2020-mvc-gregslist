@@ -22,9 +22,9 @@ export default class Job {
           <p class="card-text">${this.hours}</p>
           <p class="card-text">$${this.rate}</p>
           <p class="card-text">${this.description}</p>
-          <a href="#" class="btn btn-primary">Apply Now!</a>
+          <a href="#" class="btn btn-success">Apply Now!</a>
           <div class="text-right">
-            <button type="button" class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
+            <button type="button" class="btn btn-danger" onclick="app.jobsController.deleteJob('${this.id}')">Delete</button>
           </div>
         </div>
       </div>
